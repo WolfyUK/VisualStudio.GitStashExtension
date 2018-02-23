@@ -125,9 +125,9 @@ namespace VisualStudio.GitStashExtension.GitHelpers
                     };
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                return new GitCommandResult { ErrorMessage = "Unexpected error." };
+                return new GitCommandResult { ErrorMessage = $"Unexpected error. {ex.Message}" };
             }
         }
     }
