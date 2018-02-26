@@ -202,9 +202,9 @@ namespace VisualStudio.GitStashExtension.GitHelpers
                     };
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                return new GitCommandResult { ErrorMessage = Constants.UnexpectedErrorMessage };
+                return new GitCommandResult { ErrorMessage = $"{Constants.UnexpectedErrorMessage} {ex.Message}" };
             }
         }
 
